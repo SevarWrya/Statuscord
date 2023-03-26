@@ -4,8 +4,7 @@ const
   express = require("express"),
   chalk = require("chalk"),
   server = express(),
-  prompt = require("prompt-sync")({ sigint: true }),
-  dotenv = require('dotenv'),
+  prompt = require("prompt-sync")({ sigint: true }
   { Client } = require('discord.js-selfbot-v11'),
   client = new Client(),
 
@@ -15,19 +14,12 @@ const
     [3, ["streaming", chalk.magentaBright.bold]]
   ]);
 
-dotenv.config();
-
-if (!process.env.TOKEN) {
-  console.error("You need to add a token inside Secrets.");
-  process.exit();
-}
-
 console.log(`${chalk.cyanBright.bold("Statuscord")} | ${chalk.greenBright.bold("SealedSaucer")}`);
 
 server.all("/", (req, res) => res.send(`<meta http-equiv="refresh" content="0; URL=https://phantom.is-a.dev/support"/>`));
 server.listen(process.env.PORT ?? 3000);
 
-client.login(process.env.TOKEN);
+client.login("OTYyNTMxNTM0OTc0MzY1NzE2");
 
 console.log(`\n[${chalk.green.bold("+")}] The webserver is ready.\n`);
 
